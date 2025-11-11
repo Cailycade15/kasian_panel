@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import cl from "./Image.module.css";
 
 import icon from "../images/icon.jpg"
@@ -6,6 +6,7 @@ import QRcode from "../images/QRcode.png"
 
 import RedBack from "../images/mainBackgroundRed.png"
 import GreenBack from "../images/mainBackgroundGreen.png"
+import html2canvas from 'html2canvas';
 
 type ImageProps = {
     moneyType: string;
@@ -40,6 +41,8 @@ const Image: React.FC<ImageProps> = ({
 
     const isProcent: boolean = profitType === "Проценты" ? true : false;
 
+    const screen = useRef<HTMLDivElement>(null!)
+
     function calcPnL(entryPrice: number, exitPrice: number, leverage: number, isShort = false) {
         let diff;
         if (isShort) {
@@ -68,11 +71,37 @@ const Image: React.FC<ImageProps> = ({
     const myRedColor = "#ff0088"
     const myGreenColor = "#00ff88"
 
+
+
+    const handleScreen = async () => {
+    if (!screen.current) return;
+
+    try {
+      const canvas = await html2canvas(screen.current, { scale: 2, useCORS: true });
+
+      // Преобразуем canvas в Blob и создаем ссылку для скачивания
+      canvas.toBlob((blob) => {
+        if (!blob) return;
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "screenshot.png"; // имя файла
+        link.click();
+        URL.revokeObjectURL(url); // освобождаем память
+      }, "image/png");
+    } catch (error) {
+      console.error("Ошибка при создании скриншота:", error);
+    }
+  };
+
+
+
     return (
         <div className={cl.main}>
             <div 
                 style={{backgroundImage: `url(${isRed === true ? RedBack : GreenBack})`}}
                 className={cl.img}
+                ref={screen}
             >
                 <div className={cl.img_chd}>
                     {/* Логотип */}
@@ -139,6 +168,13 @@ const Image: React.FC<ImageProps> = ({
             </div>
 
             <div className={cl.divButtons}>
+                <button
+                    className={cl.ExitButton}
+                    onClick={() => handleScreen()}
+                >
+                    Скачать скриншот
+                </button>
+
                 <button
                     className={cl.ExitButton}
                     onClick={() => setIsGenerateIMG(false)}
