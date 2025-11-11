@@ -181,7 +181,6 @@ const Image: React.FC<ImageProps> = ({
                 >
                     ВЕРНУТЬСЯ
                 </button>
-                
             </div>
         </div>
     );
