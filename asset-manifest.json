@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/kasian_panel/static/css/main.76f504e9.css",
-    "main.js": "/kasian_panel/static/js/main.fbfc97a5.js",
+    "main.css": "/kasian_panel/static/css/main.7d16d1ce.css",
+    "main.js": "/kasian_panel/static/js/main.6dc513cc.js",
     "static/js/453.8b1da47c.chunk.js": "/kasian_panel/static/js/453.8b1da47c.chunk.js",
     "static/media/mainBackgroundGreen.png": "/kasian_panel/static/media/mainBackgroundGreen.a46f2f1d9065cc87c7ce.png",
     "static/media/mainBackgroundRed.png": "/kasian_panel/static/media/mainBackgroundRed.c8086fce393617469704.png",
@@ -9,12 +9,12 @@
     "static/media/QRcode.png": "/kasian_panel/static/media/QRcode.34db7c918f98dc6c8267.png",
     "static/media/icon.jpg": "/kasian_panel/static/media/icon.0ac15fc7fdf2bcc8f369.jpg",
     "index.html": "/kasian_panel/index.html",
-    "main.76f504e9.css.map": "/kasian_panel/static/css/main.76f504e9.css.map",
-    "main.fbfc97a5.js.map": "/kasian_panel/static/js/main.fbfc97a5.js.map",
+    "main.7d16d1ce.css.map": "/kasian_panel/static/css/main.7d16d1ce.css.map",
+    "main.6dc513cc.js.map": "/kasian_panel/static/js/main.6dc513cc.js.map",
     "453.8b1da47c.chunk.js.map": "/kasian_panel/static/js/453.8b1da47c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.76f504e9.css",
-    "static/js/main.fbfc97a5.js"
+    "static/css/main.7d16d1ce.css",
+    "static/js/main.6dc513cc.js"
   ]
 }
