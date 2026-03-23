@@ -49,7 +49,7 @@ function App() {
 
 
   useEffect (() => {
-    setNameChanel("Обратная...")
+    setNameChanel("RADIANCE A.")
     setDate(getCurrentDate()) 
     setTime(getCurrentTime())
     setIsGenerateIMG(false)
